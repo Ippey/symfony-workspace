@@ -2,6 +2,10 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
+  "runArgs": ["--init", "--privileged"],
+  "mounts": ["source=dind-var-lib-docker,target=/var/lib/docker,type=volume"],
+  "overrideCommand": false,
+
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {
       "version": "latest"
